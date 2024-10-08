@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect, useState } from "react";
 import { useDatabase } from "../../hooks/useDatabase";
-import { Checkbox, CheckboxProps, Divider, Image } from "antd";
+import { Checkbox, CheckboxProps, Image } from "antd";
 import { useNavigate } from "react-router-dom";
 import TagStatus from "../../components/Products/TagStatus";
 import { tagStatus } from "../../constants/data";
@@ -63,7 +64,7 @@ const Products = () => {
           </div>
           {dataResult ? (
             <div className="grid grid-cols-3 gap-8 px-6">
-              {dataResult.map((item) => (
+              {dataResult.map((item: any) => (
                 <div
                   className="flex flex-col rounded-2xl cursor-pointer shadow-custom hover:-translate-y-2 hover:shadow-[0px_10px_10px_#6e6e6e] hover:z-20 transition-transform duration-300 ease-in-out"
                   onClick={() => handleClickPost(item.id)}
